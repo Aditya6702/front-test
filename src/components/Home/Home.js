@@ -35,6 +35,7 @@ function Home() {
                 style={{ maxHeight: "450px" }}
               />
             </Col>
+            <Col><button type="button" href ="#" class="btn btn-primary btn-lg">Large button</button></Col>
           </Row>
 
         </Container>

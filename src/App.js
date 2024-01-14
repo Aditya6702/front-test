@@ -4,13 +4,14 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/Help/About";
 import Projects from "./components/Flight-Home/Projects";
+import FlightTracking from "./components/FlightTracking"; // Import the FlightTracking component
 import Footer from "./components/Footer";
 import Resume from "./components/catalog/ResumeNew";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Navigate
+  Navigate,
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
@@ -37,10 +38,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Flight-Home" element={<Projects />} />
+          <Route path="/flight-tracking" element={<FlightTracking />} /> {/* Add the FlightTracking route */}
           <Route path="/help" element={<About />} />
           <Route path="/catalog" element={<Resume />} />
-          {/* <Route path="/register" element={<Register />} /> */}
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
       </div>

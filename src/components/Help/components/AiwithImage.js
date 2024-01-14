@@ -54,23 +54,32 @@ const AiwithImage = () => {
     }
 
     return (
-        <div style={{ maxWidth: '600px', margin: 'auto', marginTop: '20px', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
+        <div style={{
+            maxWidth: '600px',
+            margin: 'auto',
+            marginTop: '20px',
+            padding: '20px',
+            border: '1px solid #ccc',
+            borderRadius: '5px',
+            backdropFilter: 'blur(20px)', // Adjust the blur amount as needed
+            backgroundColor: 'rgba(0,0,0, 0.3)', // Adjust the alpha (transparency) as needed
+          }}>
             <div>
-                <div style={{ display: 'flex', marginBottom: '20px' }}>
-                    <input type='file' onChange={(e) => handleImageChange(e)} style={{ marginRight: '10px' }} />
-                    <button style={{ marginLeft: '10px', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '5px' }} onClick={() => handleClick()}>Search</button>
-                </div>
-                <img src={image} alt="Preview" style={{ width: '30%', marginTop: '20px', border: '1px solid #ddd', borderRadius: '4px', padding: '5px' }} />
+              <div style={{ display: 'flex', marginBottom: '20px' }}>
+                <input type='file' onChange={(e) => handleImageChange(e)} style={{ marginRight: '10px' }} />
+                <button style={{ marginLeft: '10px', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '5px' }} onClick={() => handleClick()}>Search</button>
+              </div>
+              <img src={image} alt="Preview" style={{ width: '30%', marginTop: '20px', border: '1px solid #ddd', borderRadius: '4px', padding: '5px' }} />
             </div>
-
+          
             {loading && aiResponse === '' ? (
-                <p style={{ marginTop: '30px', textAlign: 'center', color: '#007BFF' }}>Loading ...</p>
+              <p style={{ marginTop: '30px', textAlign: 'center', color: '#007BFF' }}>Loading ...</p>
             ) : (
-                <div style={{ marginTop: '30px', textAlign: 'center' }}>
-                    <p style={{ color: 'white' }}>{aiResponse}</p>
-                </div>
+              <div style={{ marginTop: '30px', textAlign: 'center' }}>
+                <p style={{ color: 'white' ,fontSize:'1.5rem'}}>{aiResponse}</p>
+              </div>
             )}
-        </div>
+          </div>
     );
 };
 

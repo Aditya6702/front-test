@@ -21,13 +21,14 @@ const Home = () => {
         <Button
           onClick={() => handleAiWith('text')}
           variant={aiWith === 'text' ? 'primary' : 'secondary'}
+          style={{paddingRight:'2rem'}}
         >
           Text
         </Button>
 
         <Button
           style={{
-            marginLeft: '20px',
+            
             padding: '1.5rem',
           }}
           onClick={() => handleAiWith('image')}
